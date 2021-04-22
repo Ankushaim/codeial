@@ -4,11 +4,17 @@ const db = require('./config/mongoose');
 const port = 8000;
 const expressLayouts = require('express-ejs-layouts');
 
+const cookieParser = require('cookie-parser');
 
 
 app.use(express.static('./assets'));
 
 app.use(expressLayouts); 
+
+//to access cookies in middleware
+app.use(express.urlencoded());
+
+app.use(cookieParser());
 
 app.set('layout extractStyles', true);
 app.set('layout extractScripts', true);
