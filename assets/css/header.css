@@ -1,0 +1,36 @@
+header {
+  height: 7.5vh;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  font-weight: bolder;
+  font-size: 30px;
+  background-color: #1F4788;
+}
+
+header #codeial-logo {
+  color: white;
+  padding: .1em .4em;
+  text-decoration: none;
+}
+
+header .container {
+  margin: 1px;
+  padding: 1px;
+}
+
+header .container li {
+  display: inline;
+  font-size: 15px;
+}
+
+header .container li a {
+  color: white;
+  padding: 1em .7em 0.8em .7em;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+a:hover {
+  background-color: #bebb05bd;
+}

@@ -1,0 +1,11 @@
+footer {
+  display: flex;
+  background-color: #1F4788;
+  color: white;
+  height: 10.8vh;
+}
+
+footer a {
+  text-decoration: none;
+  color: white;
+}
