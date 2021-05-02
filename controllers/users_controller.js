@@ -1,5 +1,4 @@
 const User = require('../models/users');
-const Users = require('../models/users');
 
 module.exports.profile = function (req, res) {
     return res.render('user', {
@@ -43,7 +42,7 @@ module.exports.create = function(req, res) {
         
         //If user is not available then creating new user
         if(!user){
-            Users.create(req.body, function(err, user) {
+            User.create(req.body, function(err, user) {
                 if(err){console.log('Error in creating user while sign up'); return;}
 
                 return res.redirect('/users/sign-in');
