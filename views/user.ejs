@@ -1,5 +1,17 @@
 <link rel="stylesheet" href="/css/users_profle.css">
 <div style="color: blue;">
-<p><%= profile_user.name%></p>
-<p><%= profile_user.email%></p>
+    <h2>Hello <%= profile_user.name%> !</h2>
+    
+    <% if(user.id == profile_user.id) { %>
+        <h5>Update the Profile</h5>
+        <form action="/users/update/<%= profile_user.id %>" method="post">
+            <input type="text" name="name" id="name" value="<%= profile_user.name %>" required>
+            <input type="email" name="email" id="email" value="<%= profile_user.email%>" required>
+            <input type="submit" value="Update">
+        </form>
+    <% } else { %>
+        <h5>Profile Details</h5>
+        <p><%= profile_user.name%></p>
+        <p><%= profile_user.email%></p>
+     <% } %>
 </div>
