@@ -6,9 +6,10 @@ html{
         margin: 0px;
         font-family: Georgia, 'Times New Roman', Times, serif;
         #layout-main{
-            min-height: 100%;
-            padding-top:40px;
-            padding-left: 10px;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
         }   
         background-color: whitesmoke;
     }  

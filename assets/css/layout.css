@@ -10,7 +10,8 @@ html body {
 }
 
 html body #layout-main {
-  min-height: 100%;
-  padding-top: 40px;
-  padding-left: 10px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }

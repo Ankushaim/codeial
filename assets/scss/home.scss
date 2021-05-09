@@ -1,0 +1,24 @@
+#home-container{
+    display: flex;
+    align-items: stretch;
+    height: 100%;
+   
+    #feed-posts{
+        width: 80%;
+        padding: 10px;
+        
+    }
+
+    #user-friends{
+        background-color: aliceblue;
+        text-align: center;
+        width: 20%;
+        padding: 10px;
+        border-left: 2px solid #1F4788;
+        a{
+            text-decoration: none;
+            text-transform: uppercase;
+            font-weight: bold;
+        }
+    }
+}
