@@ -71,11 +71,19 @@ module.exports.create = function(req, res) {
 }  
 
 module.exports.createSession = function(req, res) {
+
+    // putting up the message to request object once the request is complited..
+    req.flash('success', 'Logged in successfully..')
     return res.redirect('/');
 }  
 
 module.exports.destroySession = function(req, res) {
     req.logout(); //pasport gives this function to request
+
+    // putting up the message to request object once the request is complited..
+    req.flash('success', 'You have logged out successfully..')
+
     res.clearCookie();  //clearing all cookies manually as in last even after logging out user name is still showing..
+    
     return res.redirect('/');
 }
