@@ -58,12 +58,13 @@ module.exports.create = function(req, res) {
         if(!user){
             User.create(req.body, function(err, user) {
                 if(err){console.log('Error in creating user while sign up'); return;}
-
+                req.flash('success', 'Account created successfully..');
                 return res.redirect('/users/sign-in');
             })
         } 
         //if user is available then redirecting back to same page
         else {
+            req.flash('error', 'Account Exists already!');
             return res.redirect('back');
         }
 
@@ -73,7 +74,7 @@ module.exports.create = function(req, res) {
 module.exports.createSession = function(req, res) {
 
     // putting up the message to request object once the request is complited..
-    req.flash('success', 'Logged in successfully..')
+    req.flash('success', 'Logged in successfully..');
     return res.redirect('/');
 }  
 

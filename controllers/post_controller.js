@@ -9,11 +9,12 @@ module.exports.create = async function(req, res) {
             user: req.user._id
         });
 
-        return res.redirect('/')
+        req.flash('success', 'Posted successfully');
+        return res.redirect('back');
 
     } catch (err) {
-        console.log('Error', err);
-        return;
+        req.flash('error', err);
+        return res.redirect('back');
     }
 }
 
@@ -26,17 +27,19 @@ module.exports.destroy = async function(req, res) {
                 // .id means converting object id into string as we are converting post user(i.e. object id) and User id(i.e also object id)
                 if(post.user == req.user.id) {
                     post.remove();
-    
+                    
                     await Comment.deleteMany({post: req.params.id});
+                    req.flash('success', 'Posted & associated Comments deteled!');
                     return res.redirect('back');
                 } else{
+                    req.flash('error', 'You can not delete this post');
                     return res.redirect('back');
                 }
             }
 
     } catch (err) {
-        console.log('Error', err);
-        return;
+        req.flash('error', err);
+        return res.redirect('back');
     }
     
 }
